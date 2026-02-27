@@ -166,10 +166,26 @@ h1 {
         </div>
         
         <div class="buttons-grid">
-            <a class="btn" href="mailto:lukas.seda@ls-music.cz">Kontaktujte nás</a>
+            <div style="position: relative; width: 100%;">
+    <button class="btn" id="contactBtn" onclick="toggleContact(event)" style="width: 100%;">Kontaktujte nás</button>
+    <div id="contactMenu" style="display: none; position: absolute; bottom: 100%; left: 0; right: 0; background: rgba(0,0,0,0.9); border-radius: 12px; margin-bottom: 10px; overflow: hidden;">
+        <a href="mailto:lukas.seda@ls-music.cz" style="display: block; padding: 12px 20px; color: #FFB84D; text-decoration: none; border-bottom: 1px solid rgba(255,184,77,0.2);">📧 Email</a>
+        <a href="tel:+420704005236" style="display: block; padding: 12px 20px; color: #FFB84D; text-decoration: none;">📞 Zavolat</a>
+    </div>
+</div>
             <a class="btn" href="index.html">Hlavní stránka</a>
         </div>
     </div>
 </div>
+<script>
+function toggleContact(e) {
+    e.stopPropagation();
+    const menu = document.getElementById('contactMenu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+document.addEventListener('click', function() {
+    document.getElementById('contactMenu').style.display = 'none';
+});
+</script>
 </body>
 </html>
