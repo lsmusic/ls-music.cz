@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB84D;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C42;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="vinylGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Vnější kruh s gradientem -->
+  <circle cx="150" cy="150" r="145" fill="url(#vinylGradient)"/>
+  
+  <!-- Oranžový vnější rámeček -->
+  <circle cx="150" cy="150" r="140" fill="none" stroke="url(#orangeGradient)" stroke-width="4"/>
+  
+  <!-- Vinylové drážky s lepším efektem -->
+  <circle cx="150" cy="150" r="120" fill="none" stroke="#FFB84D" stroke-width="1.5" opacity="0.15"/>
+  <circle cx="150" cy="150" r="110" fill="none" stroke="#FFB84D" stroke-width="1.5" opacity="0.2"/>
+  <circle cx="150" cy="150" r="100" fill="none" stroke="#FFB84D" stroke-width="1.5" opacity="0.25"/>
+  <circle cx="150" cy="150" r="90" fill="none" stroke="#FFB84D" stroke-width="1.5" opacity="0.3"/>
+  <circle cx="150" cy="150" r="80" fill="none" stroke="#FFB84D" stroke-width="1.5" opacity="0.35"/>
+  
+  <!-- Vnitřní kroužek (label vinylky) -->
+  <circle cx="150" cy="150" r="65" fill="#000000"/>
+  <circle cx="150" cy="150" r="65" fill="none" stroke="url(#orangeGradient)" stroke-width="2"/>
+  
+  <!-- LS s výraznějším stylem -->
+  <text x="150" y="158" font-family="Impact, Arial Black, sans-serif" font-size="75" font-weight="bold" fill="url(#orangeGradient)" text-anchor="middle">LS</text>
+  
+  <!-- MUSIC pod tím s lepším spacingem -->
+  <text x="150" y="205" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">MUSIC</text>
+  
+  <!-- Hudební vlny jako dynamický prvek -->
+  <path d="M 60 150 Q 80 140, 100 150 T 140 150" stroke="url(#orangeGradient)" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M 240 150 Q 220 160, 200 150 T 160 150" stroke="url(#orangeGradient)" stroke-width="2" fill="none" opacity="0.4"/>
+  
+  <!-- Notičky s lepším umístěním -->
+  <text x="75" y="80" font-family="Arial" font-size="24" fill="url(#orangeGradient)" opacity="0.8">♪</text>
+  <text x="215" y="225" font-family="Arial" font-size="24" fill="url(#orangeGradient)" opacity="0.8">♫</text>
+  <text x="210" y="80" font-family="Arial" font-size="20" fill="#FFB84D" opacity="0.6">♪</text>
+</svg>
