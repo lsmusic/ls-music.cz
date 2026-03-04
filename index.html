@@ -1,3 +1,142 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LS-Music | Profesionální hudební produkce a DJing</title>
+<meta name="description" content="LS-Music – váš partner pro hudební produkci, mix a mastering. Oficiální web s nabídkou služeb, ukázkami tvorby a kontakty. Posuňte svůj zvuk na novou úroveň.">
+<meta name="keywords" content="LS-Music, hudební produkce, DJ, hudba na zakázku, mastering, mix">
+<link rel="icon" type="image/svg+xml" href="lsmusic-logo-transparent.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#000000">
+<style>
+* {
+    box-sizing: border-box;
+}
+html {
+    background-color: #000000 !important;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #000000 !important;
+}
+body {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+        url('crowd-loving-music.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapper {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.content {
+    max-width: 750px;
+    width: 100%;
+    text-align: center;
+    padding: 40px 30px;
+    background: rgba(0,0,0,0.50);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+h1 {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    margin: 0 0 15px;
+    color: #fff;
+    line-height: 1.1;
+}
+h2 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin: 0 0 25px;
+    color: #FFB84D;
+    font-weight: normal;
+    line-height: 1.4;
+}
+.intro-text {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.7;
+    margin: 0 0 35px;
+    color: #eee;
+    text-align: center;
+}
+.highlight {
+    color: #FFB84D;
+    font-weight: bold;
+}
+.buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+.section-btn {
+    display: block;
+    padding: 18px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    background: linear-gradient(135deg, #FFB84D 0%, #FF8C42 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.section-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 184, 77, 0.5);
+}
+.section-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+@media (max-width: 600px) {
+    body {
+        background-attachment: scroll;
+        background-position: center;
+    }
+    .content {
+        padding: 30px 24px;
+    }
+    .buttons-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="content">
+        <h1>Vítejte ve světě<br><span class="highlight">LS</span>Music</h1>
+        <h2><strong>Váš partner v hudebním průmyslu</strong> – od prvního tónu až po velkolepou show.</h2>
+        <p class="intro-text">
+            Pod hlavičkou LS-Music spojujeme vášeň pro hudbu s profesionálním technickým zázemím. Naším cílem je poskytovat kompletní servis pro muzikanty i pořadatele akcí.
+        </p>
+        <div class="buttons-grid">
+            <a class="section-btn" href="lsagency.html">LSAgency</a>
+            <a class="section-btn" href="lsproduction.html">LSProduction</a>
+            <a class="section-btn" href="lslabel.html">LSLabel</a>
+        </div>
+    </div>
+</div>
+
 <div style="position: fixed; bottom: 30px; right: 30px; z-index: 999;">
     <button onclick="toggleContact()" id="contactBtn" style="
         width: 60px; height: 60px;
@@ -8,7 +147,6 @@
         font-size: 1.5rem;
         box-shadow: 0 4px 15px rgba(255,184,77,0.5);
     ">📞</button>
-
     <div id="contactMenu" style="
         display: none;
         position: absolute;
@@ -26,3 +164,26 @@
         <a href="tel:+420735903745" style="display: block; color: #fff; text-decoration: none;">📞 +420 735 903 745</a>
     </div>
 </div>
+
+<footer style="text-align: center; padding: 30px 20px; color: #aaa; font-size: 0.9rem; margin-top: 50px;">
+    <p style="margin: 5px 0;">©LSMusic</p>
+    <p style="margin: 5px 0;">e-mail: lukas.seda@ls-music.cz</p>
+    <p style="margin: 5px 0;">tel.: +420 735 903 745</p>
+</footer>
+
+<script>
+function toggleContact() {
+    const menu = document.getElementById('contactMenu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+document.addEventListener('click', function(e) {
+    const btn = document.getElementById('contactBtn');
+    const menu = document.getElementById('contactMenu');
+    if (!btn.contains(e.target)) {
+        menu.style.display = 'none';
+    }
+});
+</script>
+
+</body>
+</html>
