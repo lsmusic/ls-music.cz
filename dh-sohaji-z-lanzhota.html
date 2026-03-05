@@ -223,8 +223,8 @@ body {
     position: absolute;
     bottom: 70px;
     right: 0;
-    background: rgba(44,26,14,0.95);
-    border: 1px solid rgba(192,57,43,0.3);
+    background: rgba(255,248,235,0.97);
+    border: 1px solid rgba(176,42,26,0.3);
     border-radius: 14px;
     padding: 15px 20px;
     min-width: 230px;
@@ -299,10 +299,16 @@ body {
         <p>Máte zájem o vystoupení nebo se chcete na něco zeptat? Neváhejte nám napsat nebo zavolat.</p>
         <div style="position: relative; display: inline-block;">
             <button class="contact-btn" onclick="toggleInlineContact()">Kontaktujte nás</button>
-            <div id="inlineMenu" style="display:none; margin-top: 15px; background: rgba(44,26,14,0.95); border: 1px solid rgba(192,57,43,0.3); border-radius: 14px; padding: 15px 20px; text-align: left;">
-                <a href="/cdn-cgi/l/email-protection#d6baa3bdb7a5f8a5b3b2b796baa5fbbba3a5bfb5f8b5ac" style="display: block; color: #2c1a0e; text-decoration: none; margin-bottom: 8px;">📧 <span class="__cf_email__" data-cfemail="b8d4cdd3d9cb96cbdddcd9f8d4cb95d5cdcbd1db96dbc2">[email&#160;protected]</span></a>
+            <button class="contact-btn" onclick="toggleGallery()" style="margin-left: 15px;">📸 Galerie fotek</button>
+            <div id="inlineMenu" style="display:none; margin-top: 15px; background: rgba(255,248,235,0.97); border: 1px solid rgba(176,42,26,0.3); border-radius: 14px; padding: 15px 20px; text-align: left;">
+                <a href="mailto:lukas.seda@ls-music.cz" style="display: block; color: #2c1a0e; text-decoration: none; margin-bottom: 8px;">📧 lukas.seda@ls-music.cz</a>
                 <a href="tel:+420735903745" style="display: block; color: #2c1a0e; text-decoration: none;">📞 +420 735 903 745</a>
             </div>
+        </div>
+        <div id="galleryMsg" style="display:none; margin-top: 15px; background: rgba(255,248,235,0.97); border: 1px solid rgba(176,42,26,0.3); border-radius: 14px; padding: 20px 25px; text-align: center;">
+            <p style="font-size: 1.3rem; margin: 0 0 8px;">🚧</p>
+            <p style="color: #b02a1a; font-weight: bold; margin: 0 0 6px;">Na webu se stále pracuje</p>
+            <p style="color: #2c1a0e; margin: 0; font-size: 0.95rem;">Galerie fotek zde brzy přibude. Sledujte nás na sociálních sítích!</p>
         </div>
         <p style="margin-top: 25px; margin-bottom: 10px; color: #b02a1a; font-weight: bold;">Sledujte nás:</p>
         <div class="social-links">
@@ -321,7 +327,7 @@ body {
     <button id="floatBtn" onclick="toggleFloat()">📞</button>
     <div id="floatMenu">
         <p>Kontakt</p>
-        <a href="/cdn-cgi/l/email-protection#b0dcc5dbd1c39ec3d5d4d1f0dcc39dddc5c3d9d39ed3ca">📧 <span class="__cf_email__" data-cfemail="6b071e000a1845180e0f0a2b071846061e180208450811">[email&#160;protected]</span></a>
+        <a href="mailto:lukas.seda@ls-music.cz" style="color: #2c1a0e; text-decoration: none; display: block; margin-bottom: 8px;">📧 lukas.seda@ls-music.cz</a>
         <a href="tel:+420735903745">📞 +420 735 903 745</a>
     </div>
 </div>
@@ -332,7 +338,12 @@ body {
     <p style="margin: 5px 0;">Tel.: +420 735 903 745</p>
     <p style="margin: 5px 0;">Kapelník: Lukáš Seďa</p>
 </footer>
+
 <script>
+function toggleGallery() {
+    const msg = document.getElementById('galleryMsg');
+    msg.style.display = msg.style.display === 'none' ? 'block' : 'none';
+}
 function toggleInlineContact() {
     const menu = document.getElementById('inlineMenu');
     menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
@@ -349,3 +360,5 @@ document.addEventListener('click', function(e) {
     }
 });
 </script>
+</body>
+</html>
