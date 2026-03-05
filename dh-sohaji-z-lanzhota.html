@@ -180,6 +180,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
+    color: #fff !important;
 }
 .contact-btn:hover {
     transform: translateY(-3px);
@@ -299,7 +300,7 @@ body {
         <div style="position: relative; display: inline-block;">
             <button class="contact-btn" onclick="toggleInlineContact()">Kontaktujte nás</button>
             <div id="inlineMenu" style="display:none; margin-top: 15px; background: rgba(44,26,14,0.95); border: 1px solid rgba(192,57,43,0.3); border-radius: 14px; padding: 15px 20px; text-align: left;">
-                <a href="mailto:lukas.seda@ls-music.cz" style="display: block; color: #2c1a0e; text-decoration: none; margin-bottom: 8px;">📧 lukas.seda@ls-music.cz</a>
+                <a href="/cdn-cgi/l/email-protection#d6baa3bdb7a5f8a5b3b2b796baa5fbbba3a5bfb5f8b5ac" style="display: block; color: #2c1a0e; text-decoration: none; margin-bottom: 8px;">📧 <span class="__cf_email__" data-cfemail="b8d4cdd3d9cb96cbdddcd9f8d4cb95d5cdcbd1db96dbc2">[email&#160;protected]</span></a>
                 <a href="tel:+420735903745" style="display: block; color: #2c1a0e; text-decoration: none;">📞 +420 735 903 745</a>
             </div>
         </div>
@@ -320,34 +321,18 @@ body {
     <button id="floatBtn" onclick="toggleFloat()">📞</button>
     <div id="floatMenu">
         <p>Kontakt</p>
-        <a href="mailto:lukas.seda@ls-music.cz">📧 lukas.seda@ls-music.cz</a>
+        <a href="/cdn-cgi/l/email-protection#b0dcc5dbd1c39ec3d5d4d1f0dcc39dddc5c3d9d39ed3ca">📧 <span class="__cf_email__" data-cfemail="6b071e000a1845180e0f0a2b071846061e180208450811">[email&#160;protected]</span></a>
         <a href="tel:+420735903745">📞 +420 735 903 745</a>
     </div>
 </div>
 
 <footer style="text-align: center; padding: 30px 20px; color: #3a2010; font-size: 0.9rem;">
     <p style="margin: 5px 0;">©LS-Music & Dechová hudba Šohaji z Lanžhota</p>
-    <p style="margin: 5px 0;">e-mail: lukas.seda@ls-music.cz</p>
+    <p style="margin: 5px 0;">e-mail: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b071e000a1845180e0f0a2b071846061e180208450811">[email&#160;protected]</a></p>
     <p style="margin: 5px 0;">tel.: +420 735 903 745</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleInlineContact() {
     const menu = document.getElementById('inlineMenu');
-    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-}
-function toggleFloat() {
-    const menu = document.getElementById('floatMenu');
-    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-}
-document.addEventListener('click', function(e) {
-    const floatBtn = document.getElementById('floatBtn');
-    const floatMenu = document.getElementById('floatMenu');
-    if (!floatBtn.contains(e.target)) {
-        floatMenu.style.display = 'none';
-    }
-});
-</script>
-
-</body>
-</html>
+    m
