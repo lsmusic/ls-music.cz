@@ -332,8 +332,20 @@ body {
     <p style="margin: 5px 0;">Tel.: +420 735 903 745</p>
     <p style="margin: 5px 0;">Kapelník: Lukáš Seďa</p>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function toggleInlineContact() {
     const menu = document.getElementById('inlineMenu');
-    m
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+function toggleFloat() {
+    const menu = document.getElementById('floatMenu');
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+document.addEventListener('click', function(e) {
+    const floatBtn = document.getElementById('floatBtn');
+    const floatMenu = document.getElementById('floatMenu');
+    if (!floatBtn.contains(e.target)) {
+        floatMenu.style.display = 'none';
+    }
+});
+</script>
