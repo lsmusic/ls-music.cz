@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LSAgency | LS-Music</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#000000">
 <style>
 * {
     box-sizing: border-box;
@@ -109,20 +112,20 @@ h1 {
 /* Tlačítka - grid */
 .buttons-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
     margin-top: 30px;
 }
 /* Jednotlivá tlačítka */
 .btn {
     display: inline-block;
-    padding: 14px 28px;
-    font-size: 1.05rem;
+    padding: 18px 24px;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #000;
     background: linear-gradient(135deg, #FFB84D 0%, #FF8C42 100%);
     border: none;
-    border-radius: 999px;
+    border-radius: 12px;
     cursor: pointer;
     text-decoration: none;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -155,7 +158,7 @@ h1 {
         display: inline-block;
     }
     .buttons-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr;
     }
 }
 </style>
@@ -182,24 +185,19 @@ h1 {
         
         <div class="buttons-grid">
             <div style="position: relative; width: 100%">
-    <button class="btn" id="contactBtn" onclick="toggleContact(event)" style="width: 100%;">Kontaktujte nás</button>
-    <div id="contactMenu" style="display: none; position: absolute; bottom: 100%; left: 0; right: 0; background: rgba(0,0,0,0.9); border-radius: 12px; margin-bottom: 10px; overflow: hidden;">
-        <a href="mailto:lukas.seda@ls-music.cz" style="display: block; padding: 12px 20px; color: #FFB84D; text-decoration: none; border-bottom: 1px solid rgba(255,184,77,0.2);">📧 Email</a>
-        <a href="tel:+420735903745" style="display: block; padding: 12px 20px; color: #FFB84D; text-decoration: none;">📞 Zavolat</a>
-             <a class="btn" href="dh-sohaji-z-lanzhota.html">Koho zastupujeme</a> 
+                <button class="btn" id="contactBtn" onclick="toggleContact(event)" style="width: 100%;">Kontaktujte nás</button>
+                <div id="contactMenu" style="display: none; position: absolute; bottom: 100%; left: 0; right: 0; background: rgba(0,0,0,0.9); border-radius: 12px; margin-bottom: 10px; overflow: hidden;">
+                    <a href="/cdn-cgi/l/email-protection#3a564f515b4914495f5e5b7a564917574f495359145940" style="display: block; padding: 12px 20px; color: #FFB84D; text-decoration: none; border-bottom: 1px solid rgba(255,184,77,0.2);">📧 Email</a>
+                    <a href="tel:+420735903745" style="display: block; padding: 12px 20px; color: #FFB84D; text-decoration: none;">📞 Zavolat</a>
+                </div>
+            </div>
+            <a class="btn" href="zastupujeme.html">Zastupujeme</a>
             <a class="btn" href="index.html">Hlavní stránka</a>
         </div>
     </div>
 </div>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleContact(e) {
     e.stopPropagation();
     const menu = document.getElementById('contactMenu');
-    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
-}
-document.addEventListener('click', function() {
-    document.getElementById('contactMenu').style.display = 'none';
-});
-</script>
-</body>
-</html>
+    menu.style.display = menu.style.display === 'none' ? 'block' : '
