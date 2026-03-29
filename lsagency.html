@@ -200,4 +200,13 @@ h1 {
 function toggleContact(e) {
     e.stopPropagation();
     const menu = document.getElementById('contactMenu');
-    menu.style.display = menu.style.display === 'none' ? 'block' : '
+    menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+}
+
+document.addEventListener('click', function() {
+    const menu = document.getElementById('contactMenu');
+    if (menu) menu.style.display = 'none';
+});
+</script>
+</body>
+</html>
