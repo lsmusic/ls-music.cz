@@ -160,8 +160,9 @@ h1 span {
 /* Modal overlay */
 .modal-overlay {
     display: none;
-    position: fixed;
+    position: absolute;
     inset: 0;
+    min-height: 100%;
     background: rgba(0,0,0,0.75);
     z-index: 100;
     align-items: center;
@@ -321,8 +322,10 @@ h1 span {
 <!-- Modal pro Fajront -->
 <div class="modal-overlay" id="modal-fajront">
     <div class="modal-box">
-        <a class="btn btn-outline" href="https://www.instagram.com/fajront_official?igsh=OWg3d3MyZ3NhbjJj" target="_blank">📷 Sledovat na Instagramu</a>
-        <button class="modal-close" onclick="closeModal('fajront')">✕</button>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+    <a class="btn btn-outline" href="https://www.instagram.com/fajront_official?igsh=OWg3d3MyZ3NhbjJj" target="_blank">📷 Sledovat na Instagramu</a>
+    <button class="btn" onclick="closeModal('fajront')">Zavřít</button>
+</div>
         <h2>Fajront</h2>
         <li>Kdo jsme a co hrajeme</li>
            <p>Jsme mladá krev s chutí hrát a energií, která vás nenechá v klidu. Náš repertoár stojí na tom nejlepším z české a slovenské scény – od nesmrtelných rockových klasik (Kabát, Lucie, Elán) až po aktuální popové hity (Marek Ztracený, Mandrage). Všechno hrajeme s vlastním dravým nábojem, který dává coverům nový život.</p>
