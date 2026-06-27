@@ -214,4 +214,68 @@ document.addEventListener('click', function() {
 });
 </script>
 </body>
+    <div class="poptavka-box">
+    <h2>Nezávazná poptávka akce</h2>
+    
+    <form action="https://formsubmit.co/lukas.seda@ls-music.cz" method="POST">
+        
+        <input type="text" name="_honey" style="display:none">
+        
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="form-group">
+            <label>O jakou službu máte zájem?</label>
+            <select name="Sluzba" required>
+                <option value="">-- Vyberte službu --</option>
+                <option value="Kompletní balíček (Program + Zajištění)">Kompletní balíček (Program + Zajištění)</option>
+                <option value="Pouze hudební program (LSAgency)">Pouze hudební program (LSAgency)</option>
+                <option value="Pouze ozvučení a osvětlení (LSProduction)">Pouze ozvučení a osvětlení (LSProduction)</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>Typ akce</label>
+                <select name="Typ Akce" required>
+                    <option value="Svatba">Svatba</option>
+                    <option value="Firemní večírek">Firemní večírek</option>
+                    <option value="Městská slavnost / Koncert">Městská slavnost / Koncert</option>
+                    <option value="Oslava / Jiné">Oslava / Jiné</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Datum akce</label>
+                <input type="date" name="Datum" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Místo konání (Město / Obec)</label>
+            <input type="text" name="Misto" placeholder="Např. Brno, Lanžhot, Zlín..." required>
+        </div>
+
+        <div class="form-group">
+            <label>Vaše jméno a příjmení</label>
+            <input type="text" name="Jmeno" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label>E-mail</label>
+                <input type="email" name="Email" required>
+            </div>
+            <div class="form-group">
+                <label>Telefon</label>
+                <input type="tel" name="Telefon" required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Detaily o akci (nepovinné)</label>
+            <textarea name="Zprava" rows="3" placeholder="Přibližný počet lidí, vaše představa o hudbě..."></textarea>
+        </div>
+
+        <button type="submit">Odeslat nezávaznou poptávku</button>
+    </form>
+</div>
 </html>
