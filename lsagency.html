@@ -178,6 +178,44 @@ h1 {
     margin: 0 0 18px;
     text-align: center;
 }
+    .form-checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    color: #eee;
+    line-height: 1.4;
+}
+.form-checkbox-row input[type="checkbox"] {
+    margin-top: 3px;
+    width: 17px;
+    height: 17px;
+    accent-color: #FFB84D;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.form-checkbox-row label {
+    cursor: pointer;
+}
+.form-checkbox-row .required-mark {
+    color: #FFB84D;
+}
+.form-checkbox-row.has-error input[type="checkbox"] {
+    outline: 2px solid #ff8e8e;
+    outline-offset: 2px;
+}
+.checkbox-error {
+    display: none;
+    color: #ff8e8e;
+    font-size: 0.8rem;
+    margin-top: -8px;
+    margin-bottom: 14px;
+    margin-left: 27px;
+}
+.checkbox-error.show-error {
+    display: block;
+}
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -237,6 +275,45 @@ h1 {
 .form-submit:disabled {
     opacity: 0.7;
     cursor: not-allowed;
+}
+    .form-checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    color: #eee;
+    line-height: 1.4;
+}
+.form-checkbox-row input[type="checkbox"] {
+    margin-top: 3px;
+    width: 17px;
+    height: 17px;
+    accent-color: #FFB84D;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.form-checkbox-row label {
+    cursor: pointer;
+}
+.form-checkbox-row .required-mark {
+    color: #FFB84D;
+}
+.form-field.has-error .checkbox-error,
+.form-checkbox-row.has-error .checkbox-error {
+    display: block;
+}
+.checkbox-error {
+    display: none;
+    color: #ff8e8e;
+    font-size: 0.8rem;
+    margin-top: -8px;
+    margin-bottom: 14px;
+    margin-left: 27px;
+}
+.form-checkbox-row.has-error input[type="checkbox"] {
+    outline: 2px solid #ff8e8e;
+    outline-offset: 2px;
 }
 .form-status {
     margin-top: 14px;
@@ -336,7 +413,16 @@ h1 {
             <label for="lf-details">Detaily akce (nepovinné)</label>
             <textarea id="lf-details" name="details" placeholder="Popište nám svou představu..."></textarea>
         </div>
+<div class="form-checkbox-row" id="lf-consent-row">
+    <input type="checkbox" id="lf-consent" required>
+    <label for="lf-consent">Souhlasím se zpracováním osobních údajů za účelem vyřízení této poptávky. <span class="required-mark">*</span></label>
+</div>
+<div class="checkbox-error" id="lf-consent-error">Pro odeslání je nutný souhlas se zpracováním osobních údajů.</div>
 
+<div class="form-checkbox-row">
+    <input type="checkbox" id="lf-newsletter">
+    <label for="lf-newsletter">Chci dostávat novinky a nabídky e-mailem (nepovinné).</label>
+</div>
         <button type="submit" class="form-submit" id="lfSubmitBtn">Odeslat poptávku</button>
         <div class="form-status" id="lfStatus"></div>
     </form>
@@ -383,6 +469,19 @@ document.addEventListener('click', function() {
   form.addEventListener('submit', function(e){
     e.preventDefault();
 
+    var consent = document.getElementById('lf-consent');
+    var consentRow = document.getElementById('lf-consent-row');
+
+    if (!consent.checked) {
+      consentRow.classList.add('has-error');
+      document.getElementById('lf-consent-error').classList.add('show-error');
+      showStatus('fail', 'Pro odeslání formuláře musíte souhlasit se zpracováním osobních údajů.');
+      consentRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    } else {
+      consentRow.classList.remove('has-error');
+    }
+
     btn.disabled = true;
     btn.textContent = 'Odesílám…';
     status.className = 'form-status';
@@ -396,6 +495,7 @@ document.addEventListener('click', function() {
       email: document.getElementById('lf-email').value,
       phone: document.getElementById('lf-phone').value,
       details: document.getElementById('lf-details').value,
+      newsletter: document.getElementById('lf-newsletter').checked ? "Ano" : "Ne",
       _subject: form.querySelector('[name="_subject"]').value,
       _template: form.querySelector('[name="_template"]').value
     };
@@ -418,7 +518,6 @@ document.addEventListener('click', function() {
       btn.textContent = 'Odeslat poptávku';
     });
   });
-})();
 </script>
 </body>
 </html>
