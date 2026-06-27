@@ -163,6 +163,96 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+    /* Lead formulář */
+.lead-form {
+    text-align: left;
+    margin: 0 0 30px;
+    padding: 25px;
+    background: rgba(255, 184, 77, 0.15);
+    border-left: 4px solid #FFB84D;
+    border-radius: 8px;
+}
+.lead-form h3 {
+    color: #FFB84D;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    margin: 0 0 18px;
+    text-align: center;
+}
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+.form-field {
+    margin-bottom: 14px;
+}
+.form-field label {
+    display: block;
+    color: #eee;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+.form-field select,
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,184,77,0.4);
+    background: rgba(0,0,0,0.35);
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+.form-field select option {
+    background: #1a1a1a;
+    color: #fff;
+}
+.form-field textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+.form-field select:focus,
+.form-field input:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: #FFB84D;
+}
+.form-submit {
+    width: 100%;
+    margin-top: 6px;
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    color: #000;
+    background: linear-gradient(135deg, #FFB84D 0%, #FF8C42 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.form-submit:hover {
+    transform: translateY(-2px);
+}
+.form-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+.form-status {
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    display: none;
+    text-align: center;
+}
+.form-status.show { display: block; }
+.form-status.ok { background: rgba(76, 175, 80, 0.2); color: #8eff8e; }
+.form-status.fail { background: rgba(255, 80, 80, 0.2); color: #ff8e8e; }
+
+@media (max-width: 600px){
+  .form-row { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -187,7 +277,70 @@ h1 {
             📩 Získejte nabídku přesně na míru.<br>
         Každá akce je jedinečná. Napište nám přes formulář níže nebo přímo na e-mail a popište nám svou představu. Ozveme se vám zpět, společně doladíme detaily a navrhneme vám ideální hudební program i technické řešení.
         </div>
-        
+        <div class="lead-form">
+    <h3>📩 Získejte nabídku na míru</h3>
+    <form id="leadForm">
+        <input type="hidden" name="_subject" value="Nová poptávka z webu LSAgency">
+        <input type="hidden" name="_template" value="table">
+
+        <div class="form-field">
+            <label for="lf-package">Co poptáváte? *</label>
+            <select id="lf-package" name="package" required>
+                <option value="">— vyberte —</option>
+                <option value="Kompletní balíček (Hudební program + Technické zajištění)">Kompletní balíček (Hudební program + Technické zajištění)</option>
+                <option value="Pouze hudební program (LSAgency)">Pouze hudební program (LSAgency)</option>
+                <option value="Pouze ozvučení a osvětlení (LSProduction)">Pouze ozvučení a osvětlení (LSProduction)</option>
+            </select>
+        </div>
+
+        <div class="form-field">
+            <label for="lf-event">Typ akce *</label>
+            <select id="lf-event" name="event_type" required>
+                <option value="">— vyberte —</option>
+                <option value="Svatba">Svatba</option>
+                <option value="Firemní akce">Firemní akce</option>
+                <option value="Městská slavnost nebo koncert">Městská slavnost nebo koncert</option>
+                <option value="Oslava">Oslava</option>
+                <option value="Jiné">Jiné</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label for="lf-date">Datum akce *</label>
+                <input type="date" id="lf-date" name="event_date" required>
+            </div>
+            <div class="form-field">
+                <label for="lf-place">Místo konání *</label>
+                <input type="text" id="lf-place" name="place" placeholder="Např. Praha" required>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="lf-name">Jméno a příjmení *</label>
+            <input type="text" id="lf-name" name="name" placeholder="Jan Novák" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-field">
+                <label for="lf-email">E-mail *</label>
+                <input type="email" id="lf-email" name="email" placeholder="jan@email.cz" required>
+            </div>
+            <div class="form-field">
+                <label for="lf-phone">Telefon *</label>
+                <input type="tel" id="lf-phone" name="phone" placeholder="+420 ___ ___ ___" required>
+            </div>
+        </div>
+
+        <div class="form-field">
+            <label for="lf-details">Detaily akce (nepovinné)</label>
+            <textarea id="lf-details" name="details" placeholder="Popište nám svou představu..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit" id="lfSubmitBtn">Odeslat poptávku</button>
+        <div class="form-status" id="lfStatus"></div>
+    </form>
+</div>
         <div class="buttons-grid">
             <div style="position: relative; width: 100%">
                 <button class="btn" id="contactBtn" onclick="toggleContact(event)" style="width: 100%;">Kontaktujte nás</button>
@@ -212,6 +365,60 @@ document.addEventListener('click', function() {
     const menu = document.getElementById('contactMenu');
     if (menu) menu.style.display = 'none';
 });
+</script>
+    <script>
+(function(){
+  // Pokud chcete poptávky chodit na jiný e-mail než lukas.seda@ls-music.cz, změňte řádek níže.
+  var FORMSUBMIT_EMAIL = "lukas.seda@ls-music.cz";
+
+  var form = document.getElementById('leadForm');
+  var btn = document.getElementById('lfSubmitBtn');
+  var status = document.getElementById('lfStatus');
+
+  function showStatus(type, text){
+    status.textContent = text;
+    status.className = 'form-status show ' + (type === 'ok' ? 'ok' : 'fail');
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+
+    btn.disabled = true;
+    btn.textContent = 'Odesílám…';
+    status.className = 'form-status';
+
+    var data = {
+      package: document.getElementById('lf-package').value,
+      event_type: document.getElementById('lf-event').value,
+      event_date: document.getElementById('lf-date').value,
+      place: document.getElementById('lf-place').value,
+      name: document.getElementById('lf-name').value,
+      email: document.getElementById('lf-email').value,
+      phone: document.getElementById('lf-phone').value,
+      details: document.getElementById('lf-details').value,
+      _subject: form.querySelector('[name="_subject"]').value,
+      _template: form.querySelector('[name="_template"]').value
+    };
+
+    fetch('https://formsubmit.co/ajax/' + FORMSUBMIT_EMAIL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(function(res){ return res.json(); })
+    .then(function(){
+      showStatus('ok', 'Děkujeme! Vaši poptávku jsme přijali a brzy se vám ozveme.');
+      form.reset();
+    })
+    .catch(function(){
+      showStatus('fail', 'Něco se nepovedlo. Zkuste to prosím znovu nebo nám napište přímo na e-mail.');
+    })
+    .finally(function(){
+      btn.disabled = false;
+      btn.textContent = 'Odeslat poptávku';
+    });
+  });
+})();
 </script>
 </body>
 </html>
